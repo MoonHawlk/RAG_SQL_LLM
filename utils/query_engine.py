@@ -12,7 +12,6 @@ def get_nlsql_query_engine(engine):
     """
     sql_db = SQLDatabase(engine=engine)
 
-    # 2) Instancia o NLSQLTableQueryEngine (verbose=True para ver logs no console)
     query_engine = NLSQLTableQueryEngine(
         sql_database=sql_db,
         verbose=True
