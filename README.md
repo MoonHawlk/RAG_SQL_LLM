@@ -2,10 +2,9 @@
 
 Sistema de chat conversacional para consultas SQL em linguagem natural usando LlamaIndex e MySQL.
 
-## Apresentação do app em video
+## Apresentação do app em vídeo
 
-/docs/Apresentação app.MOV
-
+[▶ Assista à apresentação do app](docs/Apresenta%C3%A7%C3%A3o%20app.MOV)
 ## 📋 Pré-requisitos
 
 - Python 3.10.11 (Recomendo usar as mesmas versões, bibliotecas como LLama-index e Langchain tem enfrentado problemas significativos de compatibilidade quando trabalhamos com versões diferentes)
