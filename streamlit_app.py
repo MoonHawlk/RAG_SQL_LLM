@@ -1,3 +1,8 @@
+# Devido a alguns contra-tempos, acabei colocando todo o código nesse arquivo...
+# Considero isso ruim para essa situação, no entanto, tive compromissos inadiaveis,
+# As quais tive de cumprir em paralelo. De resto, a modularização funciona e foi usada
+# Na versão v1, assim como outros modulos aos quais não subi pra o git.
+
 import os
 import pandas as pd
 import streamlit as st
