@@ -62,7 +62,7 @@ MYSQL_PORT=3306
 MYSQL_DATABASE=nome_da_sua_base_dados
 ```
 
-## 🗄️ Preparação dos Dados
+## Preparação dos Dados
 
 ### 1. Processamento dos Dados Raw
 
@@ -106,34 +106,17 @@ USE nome_da_sua_base_dados;
 
 ### 1. Verificar Configurações
 
-Teste a conexão com a base de dados:
+Faça o upload da base e teste conexão:
 
 ```python
-python -c "
-import os
-from dotenv import load_dotenv
-from sqlalchemy import create_engine, text
-
-load_dotenv()
-MYSQL_USER = os.getenv('MYSQL_USER')
-MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
-MYSQL_HOST = os.getenv('MYSQL_HOST', 'localhost')
-MYSQL_PORT = os.getenv('MYSQL_PORT', '3306')
-MYSQL_DATABASE = os.getenv('MYSQL_DATABASE')
-
-connection_string = f'mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}'
-engine = create_engine(connection_string)
-
-with engine.connect() as conn:
-    result = conn.execute(text('SELECT COUNT(*) FROM train;'))
-    print(f'Registros na tabela train: {result.scalar()}')
-"
+# Na pasta root
+python load_data.py
 ```
 
 ### 2. Iniciar a Aplicação
 
 ```bash
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 A aplicação estará disponível em: `http://localhost:8501`
@@ -148,14 +131,9 @@ A aplicação estará disponível em: `http://localhost:8501`
 - "Qual é a média da coluna idade?"
 
 **Consultas com Filtros:**
-- "Mostre registros onde salario > 5000"
-- "Quantos registros têm status ativo?"
-- "Liste os dados ordenados por data"
-
-**Consultas com Gráficos:**
-- "Mostre um gráfico da distribuição por categoria"
-- "Gráfico da média de vendas por mês"
-- "Visualize a relação entre idade e salário"
+- "Mostre qual a idade média por UF"
+- "Me apresente um gráfico de quantas ocorrencias houveram em janeiro"
+- "Liste todos os UF apresetanos na base"
 
 ### Funcionalidades Disponíveis
 
